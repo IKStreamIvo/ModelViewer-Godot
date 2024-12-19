@@ -8,8 +8,9 @@ Features rotation, zooming and loading models.
 - Left mouse button - swipe to rotate the models
 - Scroll wheel / middle mouse button - scroll to zoom in and out the models
 - Previous and next buttons ![previous button sprite](/Assets/Images/prev_btn.png) ![next button sprite](/Assets/Images/next_btn.png) - navigate and load models
-- Background toggle button ![toggle background button sprite](/Assets/Images/turn_on_btn.png) - toggles between simple and blooming background
+- Background toggle button ![toggle background button sprite](/Assets/Images/turn_off_btn.png) - toggles between simple and blooming background
 - Help button ![help toggle button sprite](/Assets/Images/help_btn.png) - shows / hides help screen
+- Credits button ![credits toggle button sprite](/Assets/Images/credits_btn.png) - shows / hides credits screen
 
 # Changes
 
@@ -52,6 +53,7 @@ Features rotation, zooming and loading models.
 - [ ] Drag n' drop OBJs and load them as scenes
 - [ ] Controls for adjusting the detailed background
 - [x] Credits screen
+- [ ] Fix pixel tearing of textures (e.g. buttons)
 
 # Credits
 ## Code
