@@ -12,25 +12,46 @@ Features rotation, zooming and loading models.
 - Help button ![help toggle button sprite](/Assets/Images/help_btn.png) - shows / hides help screen
 
 # Changes
-## UI
-- [x] Fixed buttons' positions when scaling the window
-- [x] Added more buttons (e.g. background and help toggle)
-- [x] Added sprites for buttons
-- [x] Added text to show model's filename
-- [x] Added a detailed background with bloom to test models with lightings
-- [x] Used Bit3 font for texts
 
-## Models
-- [x] Removed models from initial fork due to the rights
+<details open>
+<summary>added credits, UI scaling, etc. [Dec. 20, 2024]</summary>
+<h3>UI</h3>
 
-## Code
-- [x] Added/cleaned some lines of code
+- Fixed UI scaling to be responsive to window's size
+- Changed UI's default scale to 2x
+    - In order to be clear on smaller window sizes
+- Added credits screen of the authors and assets
+- Changed the toggle background button's sprites
+    - In order to take less space visually
+
+</details>
+
+<details>
+<summary>added buttons, bloom background, help screen, etc. [Dec. 19, 2024]</summary>
+<h3>UI</h3>
+
+- Fixed buttons' positions when scaling the window
+- Added more buttons (e.g. background and help toggle)
+- Added sprites for buttons
+- Added text to show model's filename
+- Added a detailed background with bloom to test models with lightings
+- Used Bit3 font for texts
+
+<h3>Models</h3>
+
+- Removed models from initial fork due to the rights
+
+<h3>Code</h3>
+
+- Added/cleaned some lines of code
+
+</details>
 
 # To-do
-- [ ] Make UI's scale responsive to window's scale
+- [x] Make UI's scale responsive to window's scale
 - [ ] Drag n' drop OBJs and load them as scenes
 - [ ] Controls for adjusting the detailed background
-- [ ] Credits screen
+- [x] Credits screen
 
 # Credits
 ## Code

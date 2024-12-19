@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Controllers/ModelViewer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Controllers/CameraController.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Resources/ModelViewer.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Resources/BigText.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Images/help_btn_pressed.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/next_btn.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/prev_btn.png" type="Texture" id=6]
@@ -13,6 +13,11 @@
 [ext_resource path="res://Assets/Images/turn_on_btn.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Images/turn_off_btn.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Images/credits_btn.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Images/credits_btn_pressed.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/CreditsScreen.gd" type="Script" id=16]
+[ext_resource path="res://Assets/Resources/MediumText.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Assets/Resources/SmallText.tres" type="DynamicFont" id=18]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -37,10 +42,10 @@ transform = Transform( 1, 0, 0, 0, 0.769523, 0.638619, 0, -0.638619, 0.769523, 0
 [node name="Prev" type="TextureButton" parent="UI"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -40.0
-margin_right = 60.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 80 )
+margin_top = -80.0
+margin_right = 120.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 160 )
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -54,10 +59,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -60.0
-margin_top = -40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 80 )
+margin_left = -120.0
+margin_top = -80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 160 )
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -67,8 +72,9 @@ expand = true
 stretch_mode = 5
 
 [node name="Background" type="TextureButton" parent="UI"]
-margin_right = 119.0
-margin_bottom = 64.0
+margin_right = 120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -83,16 +89,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -262.0
-margin_top = -64.0
-margin_right = 262.0
+margin_left = -512.0
+margin_top = -88.0
+margin_right = 512.0
 rect_min_size = Vector2( 256, 64 )
 input_pass_on_modal_close_click = false
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "Model Name"
 align = 1
-valign = 1
 autowrap = true
 
 [node name="HelpScreen" type="Panel" parent="UI"]
@@ -103,13 +108,13 @@ custom_styles/panel = SubResource( 1 )
 script = ExtResource( 10 )
 
 [node name="BGToggle" type="Label" parent="UI/HelpScreen"]
-margin_right = 442.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 256, 64 )
+margin_right = 420.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 420, 140 )
 input_pass_on_modal_close_click = false
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-text = "Toggle background"
+text = "Change background"
 align = 2
 valign = 1
 autowrap = true
@@ -117,10 +122,10 @@ autowrap = true
 [node name="PreviousModel" type="Label" parent="UI/HelpScreen"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -32.0
-margin_right = 315.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 256, 64 )
+margin_top = -67.0
+margin_right = 400.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 400, 134 )
 input_pass_on_modal_close_click = false
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
@@ -134,10 +139,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -256.0
-margin_top = -32.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 256, 64 )
+margin_left = -306.0
+margin_top = -67.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 306, 134 )
 input_pass_on_modal_close_click = false
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
@@ -150,9 +155,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -85.0
-margin_right = 128.0
+margin_left = -512.0
+margin_top = -151.0
+margin_right = 512.0
 rect_min_size = Vector2( 256, 64 )
 input_pass_on_modal_close_click = false
 size_flags_horizontal = 3
@@ -164,9 +169,9 @@ autowrap = true
 [node name="HelpToggle" type="Label" parent="UI/HelpScreen"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -271.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 256, 64 )
+margin_left = -360.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 360, 140 )
 input_pass_on_modal_close_click = false
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
@@ -177,10 +182,9 @@ autowrap = true
 [node name="Help" type="TextureButton" parent="UI"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -64.0
-margin_right = -4.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 60, 60 )
+margin_left = -120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
 mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = ExtResource( 9 )
@@ -188,7 +192,195 @@ texture_pressed = ExtResource( 4 )
 expand = true
 stretch_mode = 5
 
+[node name="CreditsScreen" type="Panel" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 16 )
+
+[node name="Scroll" type="ScrollContainer" parent="UI/CreditsScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -240.0
+margin_right = 360.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 720, 480 )
+scroll_horizontal_enabled = false
+
+[node name="Items" type="VBoxContainer" parent="UI/CreditsScreen/Scroll"]
+margin_right = 732.0
+margin_bottom = 1078.0
+rect_min_size = Vector2( 720, 480 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Credits" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_right = 720.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 256, 72 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Credits"
+align = 1
+valign = 1
+
+[node name="Margin" type="MarginContainer" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 76.0
+margin_right = 720.0
+margin_bottom = 96.0
+custom_constants/margin_top = 20
+
+[node name="Code" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 100.0
+margin_right = 720.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 256, 50 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 17 )
+text = "Code"
+align = 1
+valign = 1
+
+[node name="CodeAuthor" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 154.0
+margin_right = 720.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 256, 36 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 18 )
+text = "Ivolutio - loading models, controls"
+align = 1
+valign = 1
+
+[node name="Margin2" type="MarginContainer" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 194.0
+margin_right = 720.0
+margin_bottom = 214.0
+custom_constants/margin_top = 20
+
+[node name="Sprites" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 218.0
+margin_right = 720.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 256, 50 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 17 )
+text = "Sprites"
+align = 1
+valign = 1
+
+[node name="SpritesAuthor" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 272.0
+margin_right = 720.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 256, 36 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 18 )
+text = "Din - buttons, text"
+align = 1
+valign = 1
+
+[node name="Margin3" type="MarginContainer" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 312.0
+margin_right = 720.0
+margin_bottom = 332.0
+custom_constants/margin_top = 20
+
+[node name="Models" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 336.0
+margin_right = 720.0
+margin_bottom = 386.0
+rect_min_size = Vector2( 256, 50 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 17 )
+text = "Models"
+align = 1
+valign = 1
+
+[node name="ModelsAuthor" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 390.0
+margin_right = 720.0
+margin_bottom = 747.0
+rect_min_size = Vector2( 256, 36 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 18 )
+text = "Kenney (www.kenney.nl)
+cars, barrel, crate, tree
+
+License: Creative Commons Zero, CC0
+creativecommons.org/publicdomain/zero/1.0
+
+Car Kit: kenney.nl/assets/car-kit
+
+Platformer Kit: kenney.nl/assets/platformer-kit"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Margin4" type="MarginContainer" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 751.0
+margin_right = 720.0
+margin_bottom = 771.0
+custom_constants/margin_top = 20
+
+[node name="Fonts" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 775.0
+margin_right = 720.0
+margin_bottom = 825.0
+rect_min_size = Vector2( 256, 50 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 17 )
+text = "Fonts"
+align = 1
+valign = 1
+
+[node name="FontsAuthor" type="Label" parent="UI/CreditsScreen/Scroll/Items"]
+margin_top = 829.0
+margin_right = 720.0
+margin_bottom = 1078.0
+rect_min_size = Vector2( 256, 36 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 18 )
+text = "Bit3 Font by CamShaft
+www.fontsc.com/font/designer/camshaft
+
+License: Freeware (Personal & Commercial Use)
+
+https://fontzone.net/font-details/bit3"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Credits" type="TextureButton" parent="UI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -120.0
+margin_top = -120.0
+rect_min_size = Vector2( 120, 120 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+expand = true
+stretch_mode = 5
+
 [connection signal="pressed" from="UI/Prev" to="ModelViewer" method="prevModel"]
 [connection signal="pressed" from="UI/Next" to="ModelViewer" method="nextModel"]
 [connection signal="toggled" from="UI/Background" to="ModelViewer/CameraController/Camera" method="_on_Background_toggled" flags=3]
 [connection signal="toggled" from="UI/Help" to="UI/HelpScreen" method="_on_Help_toggled"]
+[connection signal="toggled" from="UI/Credits" to="UI/CreditsScreen" method="_on_Credits_toggled"]
