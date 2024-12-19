@@ -1,36 +1,46 @@
 extends Spatial
 
-onready var models = [ 
-	preload("res://Models/Gemrock.tscn"), 
-	preload("res://Models/Tree.tscn")
+onready var models := [ 
+	preload("res://Models/Taxi.tscn"), 
+	preload("res://Models/Race.tscn"),
+	preload("res://Models/TractorPolice.tscn"),
+	preload("res://Models/Barrel.tscn"),
+	preload("res://Models/Tree.tscn"),
+	preload("res://Models/Crate.tscn"),
 ]
-var modelIndex = 0;
-var currentModel
+onready var model_name := get_parent().get_node("UI/Name")
+var model_index := 0
+var current_model = null
 
-func _ready():
-	_setModel(modelIndex)
+
+func _ready() -> void:
+	_setModel(model_index)
 	pass
 
-func nextModel():
-	if modelIndex >= models.size()-1:
-		modelIndex = 0
+
+func nextModel() -> void:
+	if model_index >= models.size()-1:
+		model_index = 0
 	else:
-		modelIndex += 1
-	_setModel(modelIndex)
+		model_index += 1
+	_setModel(model_index)
 	pass
-	
-func prevModel():
-	if modelIndex <= 0:
-		modelIndex = models.size()-1
+
+
+func prevModel() -> void:
+	if model_index <= 0:
+		model_index = models.size()-1
 	else:
-		modelIndex -= 1
-	_setModel(modelIndex)
+		model_index -= 1
+	_setModel(model_index)
 	pass
-	
-func _setModel(index):
+
+
+func _setModel(index: int) -> void:
 	var model = models[index].instance()
-	if currentModel != null:
-		currentModel.queue_free()
+	if current_model != null:
+		current_model.queue_free()
 	add_child(model)
-	currentModel = model
+	current_model = model
+	model_name.text = current_model.mesh.resource_path.get_file()
 	pass

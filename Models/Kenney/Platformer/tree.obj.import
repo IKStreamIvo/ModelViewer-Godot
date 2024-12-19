@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree.obj-77428a91775cc1ae5ab1346a9de3af1d.mesh"
+
+[deps]
+
+files=[ "res://.import/tree.obj-77428a91775cc1ae5ab1346a9de3af1d.mesh" ]
+
+source_file="res://Models/Kenney/Platformer/tree.obj"
+dest_files=[ "res://.import/tree.obj-77428a91775cc1ae5ab1346a9de3af1d.mesh", "res://.import/tree.obj-77428a91775cc1ae5ab1346a9de3af1d.mesh" ]
+
+[params]
+
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh_flags=4286
+generate_tangents=true
+vertex_cache_optimization=true
+octahedral_compression=true

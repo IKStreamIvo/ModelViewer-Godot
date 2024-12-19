@@ -10,15 +10,31 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="Model Viewer"
+config/description="Simple 3d model viewer. It currently supports OBJ to TSCN format."
 run/main_scene="res://Scenes/ModelViewer.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/always_on_top=true
+
+[importer_defaults]
+
+wavefront_obj={
+"generate_tangents": true,
+"octahedral_compression": true,
+"offset_mesh": Vector3( 0, 0, 0 ),
+"optimize_mesh_flags": 4286,
+"scale_mesh": Vector3( 1, 1, 1 ),
+"vertex_cache_optimization": true
+}
+
 [rendering]
 
+misc/lossless_compression/force_png=true
 environment/default_environment="res://default_env.tres"

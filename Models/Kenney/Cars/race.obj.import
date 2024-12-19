@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/race.obj-c981d3b794dba8a686b81c915b5ef255.mesh"
+
+[deps]
+
+files=[ "res://.import/race.obj-c981d3b794dba8a686b81c915b5ef255.mesh" ]
+
+source_file="res://Models/Kenney/Cars/race.obj"
+dest_files=[ "res://.import/race.obj-c981d3b794dba8a686b81c915b5ef255.mesh", "res://.import/race.obj-c981d3b794dba8a686b81c915b5ef255.mesh" ]
+
+[params]
+
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh_flags=4286
+generate_tangents=true
+vertex_cache_optimization=true
+octahedral_compression=true

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Models/Kenney/Cars/tractor-police.obj" type="ArrayMesh" id=1]
+
+[node name="MeshInstance" type="MeshInstance"]
+transform = Transform( 1.06066, 0, 1.06066, 0, 1.5, 0, -1.06066, 0, 1.06066, 0, -1, 0 )
+mesh = ExtResource( 1 )
