@@ -1,10 +1,15 @@
 # Model Viewer
 Basic Model Viewer test in Godot 3  
-Features rotation, zooming and loading models.
+Features drag-and-drop (OBJ), rotation, zooming and loading models.
 
 ![app detailed and simple preview](/model_viewer_preview.png)
 
+**Note:** The drag-and-drop function was only tested on files that share the same parent folder, e.g.  
+`./Skibidi/amogus.obj`, `./Skibidi/amogus.mtl` and `./Skibidi/Texture/sussy_tex.png`.  
+Other directory structures would most likely result to error.
+
 # Controls
+- Drag and drop an OBJ file into the window to load it
 - Left mouse button - swipe to rotate the models
 - Scroll wheel / middle mouse button - scroll to zoom in and out the models
 - Previous and next buttons ![previous button sprite](/Assets/Images/prev_btn.png) ![next button sprite](/Assets/Images/next_btn.png) - navigate and load models
@@ -15,6 +20,17 @@ Features rotation, zooming and loading models.
 # Changes
 
 <details open>
+<summary>added drag-and-drop [Dec. 28, 2024]</summary>
+<h3>Feature</h3>
+
+- Added drag-and-drop functionality
+- Loads a single dropped file
+- Generates a new MeshInstance and adds it to the `models`
+- Loads OBJ's MTL and TEX on load
+
+</details>
+
+<details>
 <summary>added credits, UI scaling, etc. [Dec. 20, 2024]</summary>
 <h3>UI</h3>
 
@@ -50,14 +66,16 @@ Features rotation, zooming and loading models.
 
 # To-do
 - [x] Make UI's scale responsive to window's scale
-- [ ] Drag n' drop OBJs and load them as scenes
+- [x] Drag n' drop OBJs and load them as scenes
 - [ ] Controls for adjusting the detailed background
 - [x] Credits screen
 - [ ] Fix pixel tearing of textures (e.g. buttons)
+- [ ] Make drag-and-drop work on export
 
 # Credits
 ## Code
-**Ivolutio [(@Ivolutio)](https://twitter.com/Ivolutio)** - loading models, controls
+**Ivolutio [(@Ivolutio)](https://twitter.com/Ivolutio)** - loading models, controls  
+**Din [(@DinPixels)](https://bsky.app/profile/dinpixels.bsky.social)** - drag-and-drop and load model
 
 ## Sprites
 **Din [(@DinPixels)](https://bsky.app/profile/dinpixels.bsky.social)** - buttons, texts
