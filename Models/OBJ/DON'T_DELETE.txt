@@ -1,0 +1,2 @@
+Do not delete this folder.
+Any new OBJ model will be put here.
