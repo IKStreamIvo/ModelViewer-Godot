@@ -58,7 +58,6 @@ func add_model(mesh_path: String, file_path: String) -> void:
 	# Get the file path and set .tscn extension
 	if result == OK:
 		var error = ResourceSaver.save(file_path, scene)
-		print(file_path)
 		if error != OK:
 			push_error("An error occurred while saving the scene to disk.")
 
