@@ -61,5 +61,5 @@ func add_model(mesh_path: String, file_path: String) -> void:
 		if error != OK:
 			push_error("An error occurred while saving the scene to disk.")
 
-	models.push_front(scene) #scene
+	models.push_front(scene)
 	_setModel(0)

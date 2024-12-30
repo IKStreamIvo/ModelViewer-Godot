@@ -86,7 +86,7 @@ func get_tex_path(mtl_path: String) -> Array:
 	file.open(mtl_path, File.READ)
 	var mtl_contents := file.get_as_text()
 
-	# Find map_Kd and .mtl, then get their length
+	# Find map_kd and .mtl, then get their length
 	var tex_path_start := mtl_contents.findn("map_kd ")+7
 	var tex_path_end := mtl_contents.findn(".png", 0)+4
 

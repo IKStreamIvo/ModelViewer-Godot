@@ -20,6 +20,15 @@ Other directory structures would most likely result to error.
 # Changes
 
 <details open>
+<summary>fixed texture pixel issues [Dec. 30, 2024]</summary>
+<h3>UI</h3>
+
+- Uses `GPU Pixel Snap` to show pixels properly
+    - Enabled `rendering/2d/snapping/use_gpu_pixel_snap`
+
+</details>
+
+<details>
 <summary>added drag-and-drop [Dec. 28, 2024]</summary>
 <h3>Feature</h3>
 
@@ -69,7 +78,7 @@ Other directory structures would most likely result to error.
 - [x] Drag n' drop OBJs and load them as scenes
 - [ ] Controls for adjusting the detailed background
 - [x] Credits screen
-- [ ] Fix pixel tearing of textures (e.g. buttons)
+- [x] Fix pixel tearing of textures (e.g. buttons)
 - [ ] Make drag-and-drop work on export
 
 # Credits
